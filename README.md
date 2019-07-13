@@ -18,7 +18,7 @@ $ yarn dev
 $ yarn start
 ```
 
-#### ENV OPTIONS
+## ENV OPTIONS
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Logic for accessing a real email (here I set Gmail)
 
