@@ -18,6 +18,32 @@ $ yarn dev
 $ yarn start
 ```
 
+## USAGE
+
+The core app is only for one route.
+
+```bash
+# core route/url
+/submit
+```
+
+When you call this route via Ajax or XHR (POST), the app expects an input with some infos.
+
+The input has to be an **Object** with this structure:
+
+```bash
+# Expected Object Structure
+{
+  name: string,
+  email: string,
+  message: string,
+  isPrivacy: boolean,
+}
+```
+
+These values will be evaluated by the app, validate, send the mail and then return a response with positive or negative feedback.
+
+
 ## ENV OPTIONS
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Logic for accessing a real email (here I set Gmail)
