@@ -5,7 +5,7 @@
 For detailed explanation about Express, checkout the [Express docs](https://expressjs.com/).
 
 
-## Setup
+## SETUP
 
 ```bash
 # install dependencies
