@@ -1,0 +1,31 @@
+doctype html
+html(
+  lang='en'
+)
+
+  //- ==========
+  head(prefix='og: http://ogp.me/ns#')
+    meta(charset='utf-8')
+
+    title
+      =title
+
+    meta(name='description', content='A sample Contact Form Mailer, using Express')
+    meta(name='author', content='Valerio Sillari')
+
+    //- viewport
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+
+    //- stylesheets
+    link(rel='stylesheet', type='text/css', href='/styles.css')
+
+  //- ==========
+  body(
+    class=pageClass
+  )
+
+    //- page content
+    block content
+
+    //- javascripts
+    script(async, src='/javascripts.js')
