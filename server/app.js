@@ -5,6 +5,7 @@ import cors from 'cors'
 import createError from 'http-errors'
 import routes from '../routes/routesList'
 import appVariables from '../config/variables/app_variables'
+import helmet from 'helmet'
 
 // dotENV custom path keys file
 const dotenvKeys = dotenv.config({
@@ -12,6 +13,9 @@ const dotenvKeys = dotenv.config({
 })
 
 const app = express()
+
+// helmet for securing HTTP header
+app.use(helmet())
 
 // CORS : Cross-origin resource sharing
 app.use(cors())

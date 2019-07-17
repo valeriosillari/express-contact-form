@@ -1,6 +1,6 @@
 # Contact Form Express
 
-### A sample Contact Form Mailer, based on Express.
+### A simple Contact Form Mailer, based on Express.
 
 For detailed explanation about Express, checkout the [Express docs](https://expressjs.com/).
 
@@ -22,7 +22,13 @@ $ yarn start
 
 ## USAGE
 
-The core app is only for one route.
+Locally you can find the app at this url:
+
+```bash
+http://localhost:5000/
+```
+
+**The core app is only for one route:**
 
 ```bash
 # core route/url

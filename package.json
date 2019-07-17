@@ -1,6 +1,6 @@
 {
   "name": "express-contact-form",
-  "description": "A sample Contact Form Mailer, based on Express",
+  "description": "A simple Contact Form Mailer, based on Express",
   "author": "Valerio Sillari | @stellavalerio",
   "version": "1.0.0",
   "private": true,
@@ -37,6 +37,7 @@
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.0",
     "gulp-nodemon": "^2.4.2",
+    "helmet": "^3.18.0",
     "http-errors": "~1.6.2",
     "nodemailer": "^5.1.1",
     "pug": "^2.0.3"
