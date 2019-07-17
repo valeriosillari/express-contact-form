@@ -22,7 +22,13 @@ $ yarn start
 
 ## USAGE
 
-The core app is only for one route.
+Locally you can find the app at this url:
+
+```bash
+http://localhost:5000/
+```
+
+**The core app is only for one route:**
 
 ```bash
 # core route/url
