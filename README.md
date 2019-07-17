@@ -1,6 +1,6 @@
 # Contact Form Express
 
-### A sample Contact Form Mailer, based on Express.
+### A simple Contact Form Mailer, based on Express.
 
 For detailed explanation about Express, checkout the [Express docs](https://expressjs.com/).
 
