@@ -37,6 +37,7 @@
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.0",
     "gulp-nodemon": "^2.4.2",
+    "helmet": "^3.18.0",
     "http-errors": "~1.6.2",
     "node-zopfli-es": "^1.0.3",
     "nodemailer": "^5.1.1",
