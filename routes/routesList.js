@@ -68,6 +68,10 @@ router.post(
       // --------------------------------
       // Setup Nodemailer transport
       // choose to whcih provider of mail sent your info and access to it.
+
+      // for Gmail
+      // https://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
+      // XOAuth2
       const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         // include SMTP traffic in the logs
