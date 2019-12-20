@@ -56,11 +56,6 @@ router.post(
     })
     const accessToken = oauth2Client.getAccessToken()
 
-
-
-
-
-
     // Server Validation: there are errors.
     if (!errors.isEmpty()) {
       // sent a response : validation status and error from server
