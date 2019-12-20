@@ -2,7 +2,7 @@
   "name": "express-contact-form",
   "description": "A simple Contact Form Mailer, based on Express",
   "author": "Valerio Sillari | @stellavalerio",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "license": "MIT",
   "repository": {
