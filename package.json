@@ -15,7 +15,6 @@
   ],
   "main": "./server/start",
   "scripts": {
-    "prettier": "prettier --write './**/*.js'",
     "dev": "gulp serverNodemon",
     "start": "yarn dev"
   },
@@ -34,6 +33,7 @@
     "dotenv": "^7.0.0",
     "express": "~4.16.0",
     "express-validator": "^5.3.1",
+    "googleapis": "^46.0.0",
     "gulp": "^4.0.2",
     "gulp-load-plugins": "^2.0.0",
     "gulp-nodemon": "^2.4.2",
