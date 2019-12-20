@@ -97,7 +97,7 @@ router.post(
         // https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
         auth: {
           type: 'OAuth2',
-          user: process.env.GMAILUSER,
+          user: process.env.GMAIL_USER,
           clientId: process.env.GMAIL_CLIENT_ID,
           clientSecret: process.env.GMAIL_CLIENT_SECRET,
           refreshToken: process.env.GMAIL_REFRESH_TOKEN,
