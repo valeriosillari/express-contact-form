@@ -64,3 +64,8 @@ You can find which ones in the ENV example file:
 ```
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
+
+
+## TODOs
+
+- set linter + prettier
