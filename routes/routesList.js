@@ -1,8 +1,10 @@
 import express from 'express'
 import expressValidator from 'express-validator/check'
 import nodemailer from 'nodemailer'
+import { google } from 'googleapis'
 
 const router = express.Router()
+
 const { check, validationResult } = expressValidator
 
 // GET home page.
@@ -39,6 +41,33 @@ router.post(
   (req, res) => {
     const errors = validationResult(req)
 
+
+
+
+
+    console.log('========= 1 ==========')
+    console.log(process.env.GMAILUSER)
+
+    const OAuth2 = google.auth.OAuth2
+
+    const oauth2Client = new OAuth2(
+        process.env.GMAIL_CLIENT_ID,
+        process.env.GMAIL_CLIENT_SECRET,
+        // Redirect URL
+        'https://developers.google.com/oauthplayground',
+    )
+
+    // Tokens Refresh for Gmail access
+    oauth2Client.setCredentials({
+         refresh_token: process.env.GMAIL_REFRESH_TOKEN
+    })
+    const accessToken = oauth2Client.getAccessToken()
+
+
+
+
+
+
     // Server Validation: there are errors.
     if (!errors.isEmpty()) {
       // sent a response : validation status and error from server
@@ -69,9 +98,6 @@ router.post(
       // Setup Nodemailer transport
       // choose to whcih provider of mail sent your info and access to it.
 
-      // for Gmail
-      // https://stackoverflow.com/questions/19877246/nodemailer-with-gmail-and-nodejs
-      // XOAuth2
       const smtpTrans = nodemailer.createTransport({
         service: 'Gmail',
         // include SMTP traffic in the logs
@@ -79,10 +105,16 @@ router.post(
         logger: true,
         // use SSL
         secure: true,
+        // for Gmail via OAuth2
+        // https://medium.com/@nickroach_50526/sending-emails-with-node-js-using-smtp-gmail-and-oauth2-316fe9c790a1
         auth: {
+          type: 'OAuth2',
           user: process.env.GMAILUSER,
-          pass: process.env.GMAILPASSWORD,
-        },
+          clientId: process.env.GMAIL_CLIENT_ID,
+          clientSecret: process.env.GMAIL_CLIENT_SECRET,
+          refreshToken: process.env.GMAIL_REFRESH_TOKEN,
+          accessToken: accessToken
+        }
       })
 
       // --------------------------------
