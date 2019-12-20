@@ -116,6 +116,7 @@ router.post(
             // give back SUCCESS output
             // Send Mailer response !
             return res.send({
+              mailItem: process.env.GMAIL_USER,
               validation: false,
               errorType: 'server-mailer',
               errors,
