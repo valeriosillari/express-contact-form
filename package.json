@@ -15,7 +15,6 @@
   ],
   "main": "./server/start",
   "scripts": {
-    "prettier": "prettier --write './**/*.js'",
     "dev": "gulp serverNodemon",
     "start": "yarn dev"
   },
