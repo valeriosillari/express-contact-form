@@ -41,13 +41,6 @@ router.post(
   (req, res) => {
     const errors = validationResult(req)
 
-
-
-
-
-    console.log('========= 1 ==========')
-    console.log(process.env.GMAILUSER)
-
     const OAuth2 = google.auth.OAuth2
 
     const oauth2Client = new OAuth2(
@@ -89,7 +82,7 @@ router.post(
       // Setup Mail options (how the final mail we receive looks like)
       const mailOpts = {
         // here just return "Web Contact Form" . not asking me why gmail change it ...
-        to: process.env.GMAILUSER,
+        to: process.env.GMAIL_USER,
         subject: `Website contact from : ${contactFormInputName} | ${contactFormInputEmail}`,
         text: `${contactFormInputMessage}`,
       }
@@ -128,20 +121,16 @@ router.post(
             // give back SUCCESS output
             // Send Mailer response !
             return res.send({
-              mailItem: process.env.GMAILUSER,
               validation: false,
               errorType: 'server-mailer',
               errors,
             })
           }
 
-          // Email sent !!!
-
-          // give back SUCCESS output
-          // Send Mailer response !
+          // Email sent : give back SUCCESS output !!!
+          // Send Mailer response
           return res.send({
             validation: true,
-            test: 'yo - 005',
           })
         }
       )

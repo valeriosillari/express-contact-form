@@ -1,1 +1,1 @@
-console.log('🚀 - secure gmail')
+console.log('🚀')
