@@ -20,7 +20,7 @@
     "prettier": "prettier --write '**/*.{css,scss,js}'",
     "lint-js": "eslint './**/*.js'",
     "fix-js": "yarn prettier && eslint --fix './**/*.js'",
-    "precommit": "yarn prettier && yarn fix-js"
+    "precommit": "yarn lint-js"
   },
   "babel": {
     "presets": [
