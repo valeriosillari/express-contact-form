@@ -19,16 +19,16 @@ server.on('listening', onListening)
 
 // Normalize a port into a number, string, or false.
 function normalizePort(val) {
-  const port = parseInt(val, 10)
+  const portItem = parseInt(val, 10)
 
-  if (isNaN(port)) {
+  if (isNaN(portItem)) {
     // named pipe
     return val
   }
 
-  if (port >= 0) {
+  if (portItem >= 0) {
     // port number
-    return port
+    return portItem
   }
 
   return false
