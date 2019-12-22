@@ -4,6 +4,7 @@ import createError from 'http-errors'
 import helmet from 'helmet'
 import routes from '../routes/routesList'
 import appVariables from '../config/variables/app_variables'
+import path from 'path'
 
 const app = express()
 
