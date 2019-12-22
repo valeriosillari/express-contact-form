@@ -16,6 +16,7 @@
   "main": "./server/start",
   "scripts": {
     "dev": "gulp serverNodemon",
+    "heroku-prebuild": "yarn precommit",
     "start": "yarn dev",
     "prettier": "prettier --write '**/*.{css,scss,js}'",
     "lint-js": "eslint './**/*.js'",
