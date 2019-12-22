@@ -41,7 +41,7 @@ router.post(
   (req, res) => {
     const errors = validationResult(req)
 
-    const OAuth2 = google.auth.OAuth2
+    const { OAuth2 } = google.auth
 
     const oauth2Client = new OAuth2(
       process.env.GMAIL_CLIENT_ID,
@@ -101,7 +101,7 @@ router.post(
           clientId: process.env.GMAIL_CLIENT_ID,
           clientSecret: process.env.GMAIL_CLIENT_SECRET,
           refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-          accessToken: accessToken,
+          accessToken,
         },
       })
 
