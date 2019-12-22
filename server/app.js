@@ -1,16 +1,9 @@
-import dotenv from 'dotenv'
-import path from 'path'
 import express from 'express'
 import cors from 'cors'
 import createError from 'http-errors'
 import helmet from 'helmet'
 import routes from '../routes/routesList'
 import appVariables from '../config/variables/app_variables'
-
-// dotENV custom path keys file
-const dotenvKeys = dotenv.config({
-  path: appVariables.fileDotEnvKeys,
-})
 
 const app = express()
 
