@@ -19,7 +19,8 @@
     "start": "yarn dev",
     "prettier": "prettier --write '**/*.{css,scss,js}'",
     "lint-js": "eslint './**/*.js'",
-    "fix-js": "yarn prettier && eslint --fix './**/*.js'"
+    "fix-js": "yarn prettier && eslint --fix './**/*.js'",
+    "precommit": "yarn prettier && yarn fix-js"
   },
   "babel": {
     "presets": [
