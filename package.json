@@ -18,8 +18,8 @@
     "dev": "gulp serverNodemon",
     "start": "yarn dev",
     "prettier": "prettier --write '**/*.{css,scss,js}'",
-    "lint-js": "eslint src/**/*.js",
-    "fix-js": "yarn prettier && eslint --fix ./**/*.js"
+    "lint-js": "eslint './**/*.js'",
+    "fix-js": "yarn prettier && eslint --fix './**/*.js'"
   },
   "babel": {
     "presets": [
