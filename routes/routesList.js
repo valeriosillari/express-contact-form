@@ -8,7 +8,7 @@ const router = express.Router()
 const { check, validationResult } = expressValidator
 
 // GET home page.
-router.get('/', (req, res) => {
+router.get('/', (req, res)  => {
   res.render('index', {
     title: 'Contact Form Mailer | Index',
   })
