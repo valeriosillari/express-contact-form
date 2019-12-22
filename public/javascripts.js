@@ -1,1 +1,1 @@
-console.log('🚀 - LINTER 01')
+console.log('🚀 ')
