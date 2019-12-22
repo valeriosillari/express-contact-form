@@ -19,7 +19,8 @@
     "prettier": "prettier --write '**/*.{css,scss,js}'",
     "lint-js": "eslint './**/*.js'",
     "fix-js": "yarn prettier && eslint --fix './**/*.js'",
-    "start": "yarn lint-js && gulp serverNodemon"
+    "build": "yarn lint-js",
+    "start": "gulp serverNodemon"
   },
   "babel": {
     "presets": [
