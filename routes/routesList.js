@@ -107,15 +107,15 @@ router.post(
 
       // --------------------------------
       // start Nodemailer logic here. mailerResponse
-      smtpTrans.sendMail(mailOpts, (errors, response) => {
+      smtpTrans.sendMail(mailOpts, mailerResponseErrors => {
         // Email not sent
         // give back mailer errors
-        if (errors) {
+        if (mailerResponseErrors) {
           // Send Mailer response !
           return res.send({
             validation: false,
             errorType: 'server-mailer',
-            errors,
+            mailerResponseErrors,
           })
         }
 
