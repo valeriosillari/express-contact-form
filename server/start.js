@@ -8,7 +8,7 @@ import appVariables from '../config/variables/app_variables'
 const normalizePort = val => {
   const portItem = parseInt(val, 10)
 
-  if (isNaN(portItem)) {
+  if (!Number.isNaN(Number(portItem))) {
     // named pipe
     return val
   }
