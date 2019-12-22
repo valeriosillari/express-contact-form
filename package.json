@@ -16,7 +16,7 @@
   "main": "./server/start",
   "scripts": {
     "dev": "gulp serverNodemon",
-    "start": "yarn precommit && yarn dev",
+    "start": "yarn dev",
     "prettier": "prettier --write '**/*.{css,scss,js}'",
     "lint-js": "eslint './**/*.js'",
     "fix-js": "yarn prettier && eslint --fix './**/*.js'",
