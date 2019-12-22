@@ -1,2 +1,2 @@
-# Files to ignore / not to change by Prettier
-# TODO: possible to set this info NOT in separate file, but in prettier config file?
+# Files to ignore / not to change by Linter
+# TODO: possible to set this info NOT in separate file, but in Linter config file?
