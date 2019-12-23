@@ -10,7 +10,6 @@ const app = express()
 // helmet for securing HTTP header
 app.use(helmet())
 
-
 // CORS : Cross-origin resource sharing
 app.use(cors())
 
