@@ -1,2 +1,1 @@
-- Linter: fix issues
 - Prettier:  fix at save on Atom.
