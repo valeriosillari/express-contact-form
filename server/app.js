@@ -1,16 +1,9 @@
-import dotenv from 'dotenv'
-import path from 'path'
 import express from 'express'
 import cors from 'cors'
 import createError from 'http-errors'
+import helmet from 'helmet'
 import routes from '../routes/routesList'
 import appVariables from '../config/variables/app_variables'
-import helmet from 'helmet'
-
-// dotENV custom path keys file
-const dotenvKeys = dotenv.config({
-  path: appVariables.fileDotEnvKeys,
-})
 
 const app = express()
 
@@ -35,13 +28,13 @@ app.use(express.static('./public'))
 app.use(routes)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use((req, res, next) => {
   next(createError(404))
 })
 
 // TODO: set separate in route file?
 // error handler
-app.use(function(err, req, res, next) {
+app.use((err, req, res) => {
   // set locals, only providing error in development
   res.locals.message = err.message
   res.locals.error = req.app.get('env') === 'development' ? err : {}

@@ -41,18 +41,18 @@ router.post(
   (req, res) => {
     const errors = validationResult(req)
 
-    const OAuth2 = google.auth.OAuth2
+    const { OAuth2 } = google.auth
 
     const oauth2Client = new OAuth2(
-        process.env.GMAIL_CLIENT_ID,
-        process.env.GMAIL_CLIENT_SECRET,
-        // Redirect URL
-        'https://developers.google.com/oauthplayground',
+      process.env.GMAIL_CLIENT_ID,
+      process.env.GMAIL_CLIENT_SECRET,
+      // Redirect URL
+      'https://developers.google.com/oauthplayground'
     )
 
     // Tokens Refresh for Gmail access
     oauth2Client.setCredentials({
-         refresh_token: process.env.GMAIL_REFRESH_TOKEN
+      refresh_token: process.env.GMAIL_REFRESH_TOKEN,
     })
     const accessToken = oauth2Client.getAccessToken()
 
@@ -101,33 +101,30 @@ router.post(
           clientId: process.env.GMAIL_CLIENT_ID,
           clientSecret: process.env.GMAIL_CLIENT_SECRET,
           refreshToken: process.env.GMAIL_REFRESH_TOKEN,
-          accessToken: accessToken
-        }
+          accessToken,
+        },
       })
 
       // --------------------------------
-      // start Nodemailer logic here !!! Action !!!
-      const mailerResponse = smtpTrans.sendMail(
-        mailOpts,
-        (errors, response) => {
-          // Email not sent
-          // give back mailer errors
-          if (errors) {
-            // Send Mailer response !
-            return res.send({
-              validation: false,
-              errorType: 'server-mailer',
-              errors,
-            })
-          }
-
-          // Email sent : give back SUCCESS output !!!
-          // Send Mailer response
+      // start Nodemailer logic here. mailerResponse
+      smtpTrans.sendMail(mailOpts, mailerResponseErrors => {
+        // Email not sent
+        // give back mailer errors
+        if (mailerResponseErrors) {
+          // Send Mailer response !
           return res.send({
-            validation: true,
+            validation: false,
+            errorType: 'server-mailer',
+            mailerResponseErrors,
           })
         }
-      )
+
+        // Email sent : give back SUCCESS output !!!
+        // Send Mailer response
+        return res.send({
+          validation: true,
+        })
+      })
 
       // end if
     }
