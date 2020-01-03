@@ -6,7 +6,6 @@ For detailed explanation about Express, checkout the [Express docs](https://expr
 
 [![Codeship Status for valeriosillari/express-contact-form](https://app.codeship.com/projects/e23d2620-87f5-0137-b283-36c18113679c/status?branch=master)](https://app.codeship.com/projects/354286)
 
-
 ## SETUP
 
 ```bash
@@ -51,7 +50,6 @@ The input has to be an **Object** with this structure:
 
 These values will be evaluated by the app, validate, send the mail and then return a response with positive or negative feedback.
 
-
 ## ENV OPTIONS
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Logic for accessing a real email (here I set Gmail)
@@ -65,7 +63,6 @@ You can find which ones in the ENV example file:
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-
 ## TODOs
 
-- set linter + prettier
+- tests (Jest?)
