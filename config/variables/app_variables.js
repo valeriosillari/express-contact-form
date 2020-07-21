@@ -3,7 +3,7 @@
 
 const appVariables = {
   // local port for nodemon/server
-  defaultAppPort: 5000,
+  defaultAppPort: 8000,
 
   // dotENV file
   fileDotEnvKeys: './config/env_variables/env_keys',

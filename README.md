@@ -24,7 +24,7 @@ $ yarn start
 Locally you can find the app at this url:
 
 ```bash
-http://localhost:5000/
+http://localhost:8000/
 ```
 
 **The core app is only for one route:**
