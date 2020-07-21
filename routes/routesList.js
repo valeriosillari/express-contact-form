@@ -1,11 +1,20 @@
+import dotenv from 'dotenv'
 import express from 'express'
-import expressValidator from 'express-validator/check'
+import { check, validationResult } from 'express-validator/check'
 import nodemailer from 'nodemailer'
 import { google } from 'googleapis'
+import bodyParser from 'body-parser'
+import appVariables from '../config/variables/app_variables'
+
+// dotENV custom path keys file
+const dotenvKeys = dotenv.config({
+  path: appVariables.fileDotEnvKeys,
+})
 
 const router = express.Router()
 
-const { check, validationResult } = expressValidator
+// create application/json parser
+const jsonParser = bodyParser.json()
 
 // GET home page.
 router.get('/', (req, res) => {
@@ -18,6 +27,7 @@ router.get('/', (req, res) => {
 // set via ajax, with here server validation + mailer
 router.post(
   '/submit',
+  jsonParser,
   // validation | all received data must be strings
   [
     check('name')
@@ -79,7 +89,20 @@ router.post(
         // here just return "Web Contact Form" . not asking me why gmail change it ...
         to: process.env.GMAIL_USER,
         subject: `Website contact from : ${contactFormInputName} | ${contactFormInputEmail}`,
-        text: `${contactFormInputMessage}`,
+        html: `
+        <p>
+          From: <b>${contactFormInputName}</b>
+        <p>
+        <p>
+          Email: <b>${contactFormInputEmail}</b>
+        <p>
+        <p>
+          <b>Message:</b>
+        <p>
+        <p>
+          ${contactFormInputMessage}
+        <p>
+      `,
       }
 
       // --------------------------------
