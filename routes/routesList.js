@@ -7,7 +7,7 @@ import bodyParser from 'body-parser'
 import appVariables from '../config/variables/app_variables'
 
 // dotENV custom path keys file
-const dotenvKeys = dotenv.config({
+dotenv.config({
   path: appVariables.fileDotEnvKeys,
 })
 
