@@ -97,7 +97,7 @@ router.post(
           Email: <b>${contactFormInputEmail}</b>
         <p>
         <p>
-          <b>Message YO:</b>
+          <b>Message:</b>
         <p>
         <p>
           ${contactFormInputMessage}

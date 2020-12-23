@@ -1,1 +1,1 @@
-console.log('🚀 🚀 🚀 - test 02')
+console.log('🚀 🚀 🚀 ')
