@@ -66,3 +66,4 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 ## TODOs
 
 - tests (Jest?)
+- check again all CI/DE logic
